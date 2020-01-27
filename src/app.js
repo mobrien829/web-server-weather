@@ -46,12 +46,13 @@ app.get("/help", (req, res) => {
 });
 
 app.get("/weather", (req, res) => {
-  res.send([
-    {
-      forecast: "meh",
-      location: "Singapore"
-    }
-  ]);
+  if (!req.query.location) {
+    return res.send({ error: "you must provide a location" });
+  }
+  res.send({
+    forecast: "meh",
+    location: req.query.location
+  });
 });
 
 app.get("/help/*", (req, res) => {
