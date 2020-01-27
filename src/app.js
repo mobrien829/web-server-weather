@@ -54,6 +54,22 @@ app.get("/weather", (req, res) => {
   ]);
 });
 
+app.get("/help/*", (req, res) => {
+  res.render("404", {
+    title: "404",
+    message: "Help article not found",
+    name: "Michael O'Brien"
+  });
+});
+
+app.get("*", (req, res) => {
+  res.render("404", {
+    title: "404",
+    message: "Page not found",
+    name: "Michael O'Brien"
+  });
+});
+
 // .listen sets up server (port, callback)
 
 app.listen(3000, () => {
