@@ -14,7 +14,7 @@ searchForm.addEventListener("submit", event => {
 const handleFetch = location => {
   errorMessage.innerText = "loading...";
   forecastMessage.innerText = ``;
-  fetch(`http://localhost:3000/weather?location=${location}`)
+  fetch(`/weather?location=${location}`)
     .then(res => res.json())
     // .then(data => console.log(data));
     .then(data => setMessage(data));
