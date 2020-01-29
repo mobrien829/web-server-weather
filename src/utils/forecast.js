@@ -16,7 +16,7 @@ const forecast = ({ latitude, longitude, location }, callback) => {
         body.currently.preciptationType || "precipitation";
       callback(
         undefined,
-        `Forecast overview for ${location} on ${time}: It is currently ${body.currently.temperature} degrees out. ${body.daily.data[0].summary} The high will be ${body.daily.data[0].temperatureHigh} with a low of ${body.daily[0].data.temperatureLow}. It currently feels like ${body.currently.apparentTemperature}. There is a ${body.currently.precipProbability}% chance of ${precipitationType}.`
+        `Forecast overview for ${location} on ${time}: It is currently ${body.currently.temperature} degrees out. ${body.daily.data[0].summary} The high will be ${body.daily.data[0].temperatureHigh} with a low of ${body.daily.data[0].temperatureLow}. It currently feels like ${body.currently.apparentTemperature}. There is a ${body.currently.precipProbability}% chance of ${precipitationType}.`
       );
     }
   });
