@@ -14,7 +14,7 @@ const forecast = ({ latitude, longitude, location }, callback) => {
       const time = dateObject.toUTCString();
       callback(
         undefined,
-        `Forecast overview for ${location} on ${time}: It is currently ${body.currently.temperature} degrees out. ${body.daily.data[0].summary} There is a ${body.currently.precipProbability}% chance of rain.`
+        `Forecast overview for ${location} on ${time}: It is currently ${body.currently.temperature} degrees out. ${body.daily.data[0].summary} The high will be ${body.daily.data.temperatureHigh} with a low of ${body.daily.data.temperatureLow}. It currently feels like ${body.currently.apparentTemperature}. There is a ${body.currently.precipProbability}% chance of ${body.currently.precipType}.`
       );
     }
   });
