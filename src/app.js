@@ -2,7 +2,7 @@ const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 const forecast = require("./utils/forecast.js");
 const geocode = require("./utils/geocode.js");
 
@@ -29,14 +29,14 @@ hbs.registerPartials(partialsPath);
 app.get("", (req, res) => {
   res.render("index", {
     title: "Weather",
-    name: "Michael O'Brien"
+    name: "Michael O'Brien",
   });
 });
 
 app.get("/about", (req, res) => {
   res.render("about", {
     title: "About me",
-    name: "Michael O'Brien"
+    name: "Michael O'Brien",
   });
 });
 
@@ -44,7 +44,7 @@ app.get("/help", (req, res) => {
   res.render("help", {
     message: "What do you need help with?",
     title: "Help page",
-    name: "Michael O'Brien"
+    name: "Michael O'Brien",
   });
 });
 
@@ -69,7 +69,7 @@ app.get("/help/*", (req, res) => {
   res.render("404", {
     title: "404",
     message: "Help article not found",
-    name: "Michael O'Brien"
+    name: "Michael O'Brien",
   });
 });
 
@@ -77,7 +77,7 @@ app.get("*", (req, res) => {
   res.render("404", {
     title: "404",
     message: "Page not found",
-    name: "Michael O'Brien"
+    name: "Michael O'Brien",
   });
 });
 
